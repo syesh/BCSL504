@@ -1,0 +1,106 @@
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+
+.part_a{
+background-color:red;
+color:white;
+flex-direction:column;
+padding:20px;
+}
+
+.part_b > h3{
+color:red;
+}
+
+button > a{
+text-decoration:none;
+color:white;
+}
+
+ul{
+list-style-type:none;
+}
+
+button{
+background-color:MediumSeaGreen;
+border: none;
+color: white;
+padding: 16px 32px;
+text-align: center;
+text-decoration: none;
+font-size: 16px;
+margin: 4px 2px;
+transition-duration: 0.4s;
+cursor: pointer;
+}
+
+
+.part_b{
+display:flex;
+flex-direction:row;
+padding:20px;
+}
+
+
+.part_bb{
+display:flex;
+flex-direction:coloumn;
+justify-content:center;
+}
+
+
+.part_c{
+background-color:rgb(0,180,0);
+display:flex;
+flex-direction:column;
+padding:20px;
+}
+
+
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" context ="width = display-width , initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">
+<title>Page 1</title>
+</head>
+<body>
+<div class="part_a">
+<h1>Welcome to My Homepage</h1>
+<p>Use the menue to select different Stylesheet </p>
+</div>
+<div class="part_b">
+<div class ="part_ba"> 
+<h3>Same page Different stylesheets</h3>
+<p>This is a page where u click set of buttons to apply certain css styles</p>
+<p>Links are:</p>
+<ul>
+<li><a href="page5.html">StyleSheet 1</a></li>
+<li><a href="page5.html">StyleSheet 2</a></li>
+<li><a href="page5.html">StyleSheet 3</a></li>
+<li><a href="page5.html">StyleSheet 4</a></li>
+<li><a href="page5.html">StyleSheet 5</a></li>
+</ul>
+</div>
+<div class="part_bb">
+<button><a href="page1.html">Stylesheet1</a></button>
+<button><a href="page2.html">Stylesheet2</a></button>
+<button><a href="page3.html">Stylesheet3</a></button>
+<button><a href="page4.html">Stylesheet4</a></button>
+<button><a href="page5.html">No Stylesheet</a></button>
+</div>
+</div>
+<div class="part_c">
+<h3>Side-bar</h3>
+<p>Side bar plays more of a footer role in this page as it stays majorly in the static postion</p>
+</div>
+</body>
+</html>
+
+
+
