@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: rgb(178, 192, 210)
+        }
+
+        .calculator {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 320px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        button {
+            padding: 12px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+        }
+        .outer-container{
+            background-color: white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="outer-container">
+        <h1>Simple Calculator</h1>
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        
+        <div class="buttons">
+            <button onclick="calcSum()">Sum</button>
+            <button onclick="calcDifference()">Difference</button>
+            <button onclick="calcProduct()">Product</button>
+            <button onclick="calcQuotient()">Quotient</button>
+            <button onclick="calcRemainder()">Remainder</button>
+            <button onclick="calcPower()">Power</button>
+            <button onclick="calcSquare()">Square</button>
+            <button onclick="calcSquareRoot()">Square Root</button>
+        </div>
+        
+        <h2 id="result">Result: </h2>
+    </div>
+
+    <script>
+        function getNumbers() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            return { num1, num2 };
+        }
+
+        function displayResult(value) {
+            document.getElementById('result').textContent = 'Result: ' + value;
+        }
+
+        function calcSum() {
+            const { num1, num2 } = getNumbers();
+            if (isNaN(num1) || isNaN(num2)) return;
+            displayResult(num1 + num2);
+        }
+
+        function calcDifference() {
+            const { num1, num2 } = getNumbers();
+            if (isNaN(num1) || isNaN(num2)) return;
+            displayResult(num1 - num2);
+        }
+
+        function calcProduct() {
+            const { num1, num2 } = getNumbers();
+            if (isNaN(num1) || isNaN(num2)) return;
+            displayResult(num1 * num2);
+        }
+
+        function calcQuotient() {
+            const { num1, num2 } = getNumbers();
+            if (isNaN(num1) || isNaN(num2)) return;
+            if (num2 === 0) {
+                displayResult('Cannot divide by zero');
+                return;
+            }
+            displayResult(num1 / num2);
+        }
+
+        function calcRemainder() {
+            const { num1, num2 } = getNumbers();
+            if (isNaN(num1) || isNaN(num2)) return;
+            displayResult(num1 % num2);
+        }
+
+        function calcPower() {
+            const { num1, num2 } = getNumbers();
+            if (isNaN(num1) || isNaN(num2)) return;
+            displayResult(Math.pow(num1, num2));
+        }
+
+        function calcSquare() {
+            const { num1 } = getNumbers();
+            if (isNaN(num1)) return;
+            displayResult(num1 * num1);
+        }
+
+        function calcSquareRoot() {
+            const { num1 } = getNumbers();
+            if (isNaN(num1)) return;
+            if (num1 < 0) {
+                displayResult('Invalid input');
+                return;
+            }
+            displayResult(Math.sqrt(num1));
+        }
+    </script>
+
+</body>
+</html>
